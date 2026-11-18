@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ComfyUI files and models
+# download the models manually
+comfy/
