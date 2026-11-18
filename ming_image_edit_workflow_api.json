@@ -1,0 +1,270 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "ming_image_0.1_design_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model",
+      "cnr_id": "comfy-core",
+      "ver": "0.37.2"
+    }
+  },
+  "2": {
+    "inputs": {
+      "clip_name": "ming_image_0.1_ling_mini_2.0_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP",
+      "cnr_id": "comfy-core",
+      "ver": "0.37.2"
+    }
+  },
+  "3": {
+    "inputs": {
+      "vae_name": "ming_image_vae_bf16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE",
+      "cnr_id": "comfy-core",
+      "ver": "0.37.2"
+    }
+  },
+  "10": {
+    "inputs": {
+      "seed": 730680985082216,
+      "steps": 12,
+      "cfg": 1,
+      "sampler_name": "lcm",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "26",
+        0
+      ],
+      "positive": [
+        "23",
+        0
+      ],
+      "negative": [
+        "24",
+        0
+      ],
+      "latent_image": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler",
+      "cnr_id": "comfy-core",
+      "ver": "0.37.2"
+    }
+  },
+  "11": {
+    "inputs": {
+      "samples": [
+        "10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode",
+      "cnr_id": "comfy-core",
+      "ver": "0.37.2"
+    }
+  },
+  "15": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "megapixels": 1,
+      "resolution_steps": 32,
+      "image": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": {
+      "title": "Scale Image to Total Pixels",
+      "cnr_id": "comfy-core",
+      "ver": "0.37.2"
+    }
+  },
+  "21": {
+    "inputs": {
+      "attention": "comfy kitchen attention",
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ModelAttentionBackend",
+    "_meta": {
+      "title": "Model Attention Backend",
+      "cnr_id": "comfy-core",
+      "ver": "0.37.2"
+    }
+  },
+  "22": {
+    "inputs": {
+      "image": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "Get Image Size",
+      "cnr_id": "comfy-core",
+      "ver": "0.37.2"
+    }
+  },
+  "23": {
+    "inputs": {
+      "prompt": [
+        "34",
+        0
+      ],
+      "clip": [
+        "2",
+        0
+      ],
+      "images.image_1": [
+        "36",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "TextEncodeMingImageEdit",
+    "_meta": {
+      "title": "Text Encode Ming Image Edit",
+      "cnr_id": "comfy-core",
+      "ver": "0.38.1"
+    }
+  },
+  "24": {
+    "inputs": {
+      "conditioning": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "Conditioning Zero Out",
+      "cnr_id": "comfy-core",
+      "ver": "0.38.1"
+    }
+  },
+  "25": {
+    "inputs": {
+      "width": [
+        "22",
+        0
+      ],
+      "height": [
+        "22",
+        1
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image",
+      "cnr_id": "comfy-core",
+      "ver": "0.38.1"
+    }
+  },
+  "26": {
+    "inputs": {
+      "max_shift": 1.15,
+      "base_shift": 0.5,
+      "width": [
+        "22",
+        0
+      ],
+      "height": [
+        "22",
+        1
+      ],
+      "model": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingFlux",
+    "_meta": {
+      "title": "ModelSamplingFlux",
+      "cnr_id": "comfy-core",
+      "ver": "0.38.1"
+    }
+  },
+  "30": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "32": {
+    "inputs": {
+      "image": "cubemap.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "34": {
+    "inputs": {
+      "value": "This is a 3d model of a housefly. Add a realistic housefly texture to it."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "Prompt"
+    }
+  },
+  "36": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": [
+        "22",
+        0
+      ],
+      "height": [
+        "22",
+        1
+      ],
+      "crop": "center",
+      "image": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "Upscale Image"
+    }
+  }
+}

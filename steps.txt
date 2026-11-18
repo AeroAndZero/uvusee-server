@@ -1,0 +1,5 @@
+git clone https://github.com/AeroAndZero/uvusee-server.git -> clones the repo on the server
+source .venv/Scripts/activate -> activate the virtual environment
+uv sync -> download all packages
+comfy --workspace ./comfy install --fast-dep -> install comfyui in the same folder
+comfy launch --background -> launch comfyui headlessely 
