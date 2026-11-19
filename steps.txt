@@ -3,3 +3,14 @@ source .venv/Scripts/activate -> activate the virtual environment
 uv sync -> download all packages
 comfy --workspace ./comfy install --fast-dep -> install comfyui in the same folder
 comfy launch --background -> launch comfyui headlessely 
+uv run uvusee -> run the server
+
+# Setup for Ming Design 0.1
+model/diffusion_model -> ming_image_0.1_design_int8_convrot.safetensors
+model/text_encoders -> ming_image_0.1_ling_mini_2.0_int8_convrot.safetensors
+model/vae -> ming_image_vae_bf16.safetensors
+
+# Setup for Flux.2 Klein 9B
+model/diffusion_model -> flux-2-klein-9b-kv-fp8.safetensors
+model/text_encoders -> qwen_3_8b_fp8mixed.safetensors
+model/vae -> flux2-vae.safetensors

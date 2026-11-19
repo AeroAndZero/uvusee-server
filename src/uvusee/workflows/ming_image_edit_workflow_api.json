@@ -62,7 +62,7 @@
     },
     "class_type": "KSampler",
     "_meta": {
-      "title": "KSampler",
+      "title": "UVUSEE_KSAMPLER",
       "cnr_id": "comfy-core",
       "ver": "0.37.2"
     }
@@ -224,7 +224,7 @@
     },
     "class_type": "SaveImage",
     "_meta": {
-      "title": "Save Image"
+      "title": "UVUSEE_OUTPUT"
     }
   },
   "32": {
@@ -233,7 +233,7 @@
     },
     "class_type": "LoadImage",
     "_meta": {
-      "title": "Load Image"
+      "title": "UVUSEE_IMAGE"
     }
   },
   "34": {
@@ -242,7 +242,7 @@
     },
     "class_type": "PrimitiveStringMultiline",
     "_meta": {
-      "title": "Prompt"
+      "title": "UVUSEE_PROMPT"
     }
   },
   "36": {

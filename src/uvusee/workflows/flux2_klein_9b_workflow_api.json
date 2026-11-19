@@ -1,0 +1,261 @@
+{
+  "6": {
+    "inputs": {
+      "text": "This is a 3d model of a housefly. Please generate textures for it.",
+      "clip": [
+        "195",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "UVUSEE_PROMPT",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.27"
+    }
+  },
+  "163": {
+    "inputs": {
+      "seed": 911796843299534,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "212",
+        0
+      ],
+      "positive": [
+        "204",
+        0
+      ],
+      "negative": [
+        "205",
+        0
+      ],
+      "latent_image": [
+        "197",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "UVUSEE_KSAMPLER",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.27"
+    }
+  },
+  "164": {
+    "inputs": {
+      "samples": [
+        "163",
+        0
+      ],
+      "vae": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.32"
+    }
+  },
+  "190": {
+    "inputs": {
+      "conditioning": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "Conditioning Zero Out",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "194": {
+    "inputs": {
+      "unet_name": "flux-2-klein-9b-kv-fp8.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "195": {
+    "inputs": {
+      "clip_name": "qwen_3_8b_fp8mixed.safetensors",
+      "type": "flux2",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "196": {
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "197": {
+    "inputs": {
+      "width": [
+        "200",
+        0
+      ],
+      "height": [
+        "200",
+        1
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyFlux2LatentImage",
+    "_meta": {
+      "title": "Empty Flux 2 Latent",
+      "cnr_id": "comfy-core",
+      "ver": "0.10.0"
+    }
+  },
+  "198": {
+    "inputs": {
+      "image": "cubemap.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "UVUSEE_IMAGE",
+      "cnr_id": "comfy-core",
+      "ver": "0.10.0"
+    }
+  },
+  "199": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "megapixels": 1,
+      "resolution_steps": 16,
+      "image": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": {
+      "title": "Scale Image to Total Pixels",
+      "cnr_id": "comfy-core",
+      "ver": "0.10.0"
+    }
+  },
+  "200": {
+    "inputs": {
+      "image": [
+        "199",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "Get Image Size",
+      "cnr_id": "comfy-core",
+      "ver": "0.10.0"
+    }
+  },
+  "203": {
+    "inputs": {
+      "filename_prefix": "img",
+      "images": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "UVUSEE_OUTPUT",
+      "cnr_id": "comfy-core",
+      "ver": "0.10.0"
+    }
+  },
+  "204": {
+    "inputs": {
+      "conditioning": [
+        "6",
+        0
+      ],
+      "latent": [
+        "206",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "Set Reference Latent",
+      "cnr_id": "comfy-core",
+      "ver": "0.10.0"
+    }
+  },
+  "205": {
+    "inputs": {
+      "conditioning": [
+        "190",
+        0
+      ],
+      "latent": [
+        "206",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "Set Reference Latent",
+      "cnr_id": "comfy-core",
+      "ver": "0.10.0"
+    }
+  },
+  "206": {
+    "inputs": {
+      "pixels": [
+        "199",
+        0
+      ],
+      "vae": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode",
+      "cnr_id": "comfy-core",
+      "ver": "0.10.0"
+    }
+  },
+  "212": {
+    "inputs": {
+      "model": [
+        "194",
+        0
+      ]
+    },
+    "class_type": "FluxKVCache",
+    "_meta": {
+      "title": "Flux KV Cache",
+      "cnr_id": "comfy-core",
+      "ver": "0.17.0"
+    }
+  }
+}
