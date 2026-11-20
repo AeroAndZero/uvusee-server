@@ -1,0 +1,22 @@
+services:
+  uvusee:
+    build: .
+    image: uvusee
+    ports:
+      - "8000:8000"
+    environment:
+      # Only needed if the black-forest-labs repo asks you to accept its license
+      - HF_TOKEN=${HF_TOKEN:-}
+    volumes:
+      - models:/app/comfy/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+
+volumes:
+  models:
