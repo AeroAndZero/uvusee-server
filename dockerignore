@@ -1,8 +1,0 @@
-.venv/
-comfy/
-models/
-**/__pycache__/
-*.pyc
-.git/
-.env
-*.safetensors
