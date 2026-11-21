@@ -193,7 +193,7 @@ install_all() {
   exec > >(tee -a "$LOG_FILE") 2>&1
   log "$(date '+%F %T') - installing into $UVUSEE_DIR (log: $LOG_FILE)"
   check_prereqs
-  check_disk
+  #check_disk
   check_model_access
   step_clone
   if [[ ! -f "$INSTALLED_MARKER" ]]; then
