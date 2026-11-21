@@ -44,6 +44,9 @@ def run_job(job_id: str, workflow: Workflow, image: bytes, prompt: str) -> None:
     with lock:
         jobs[job_id].update(update)
 
+@app.get("/")
+async def hello():
+    return "Server is up and running. Use '/texture' path for the plugin"
 
 @app.post("/texture", status_code=202)
 async def texture(

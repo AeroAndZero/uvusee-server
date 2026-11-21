@@ -155,7 +155,7 @@ uv_sync() {                                              # 3. uv sync
 
 comfy_install() {                                        # 4. comfy install --fast-deps
   # On an existing comfy/ folder this skips the clone and only (re)installs ComfyUI's packages.
-  local args=(install --nvidia --fast-deps)
+  local args=(install --nvidia --restore --fast-deps)
   if [[ -n "${COMFYUI_VERSION:-}" ]]; then args+=(--version "$COMFYUI_VERSION"); fi
   # Not $CUDA_VERSION: NVIDIA/vast.ai images already set that (e.g. 13.2.1) for the toolkit.
   if [[ -n "${UVUSEE_CUDA_VERSION:-}" ]]; then
