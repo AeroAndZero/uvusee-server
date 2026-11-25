@@ -1,0 +1,224 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 706447242535993,
+      "steps": 8,
+      "cfg": 4,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "32",
+        0
+      ],
+      "positive": [
+        "23",
+        0
+      ],
+      "negative": [
+        "24",
+        0
+      ],
+      "latent_image": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "UVUSEE_KSAMPLER",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "10": {
+    "inputs": {
+      "unet_name": "qwen-image-edit-2511-Q6_K.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)",
+      "cnr_id": "ComfyUI-GGUF",
+      "ver": "be2a08330d7ec232d684e50ab938870d7529471e"
+    }
+  },
+  "11": {
+    "inputs": {
+      "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "12": {
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "15": {
+    "inputs": {
+      "shift": 3.1,
+      "sampling": "flow",
+      "model": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "ModelSamplingAuraFlow",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "20": {
+    "inputs": {
+      "pixels": [
+        "22",
+        0
+      ],
+      "vae": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "22": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "megapixels": 1,
+      "resolution_steps": 16,
+      "image": [
+        "45",
+        0
+      ]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": {
+      "title": "Scale Image to Total Pixels",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "23": {
+    "inputs": {
+      "prompt": "This is a viewport display of a wooden chair. Please texture it.",
+      "clip": [
+        "11",
+        0
+      ],
+      "vae": [
+        "12",
+        0
+      ],
+      "image1": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": {
+      "title": "UVUSEE_PROMPT",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "24": {
+    "inputs": {
+      "prompt": "artifacts. low quality.",
+      "clip": [
+        "11",
+        0
+      ],
+      "vae": [
+        "12",
+        0
+      ],
+      "image1": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": {
+      "title": "UVUSEE_NEGATIVE_PROMPT",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "31": {
+    "inputs": {
+      "filename_prefix": "qwen",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "UVUSEE_OUTPUT",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.60"
+    }
+  },
+  "32": {
+    "inputs": {
+      "strength": 1,
+      "pre_cfg": false,
+      "model": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "CFGNorm",
+    "_meta": {
+      "title": "CFGNorm",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.66"
+    }
+  },
+  "45": {
+    "inputs": {
+      "image": "viewport.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "UVUSEE_IMAGE"
+    }
+  }
+}

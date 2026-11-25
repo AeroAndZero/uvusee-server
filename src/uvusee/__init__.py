@@ -17,8 +17,9 @@ WORKFLOW_DIR = Path(__file__).parent / "workflows"
 TITLES = dict(require=("UVUSEE_IMAGE", "UVUSEE_PROMPT"), output="UVUSEE_OUTPUT", seed_node="UVUSEE_KSAMPLER")
 WORKFLOWS = {
     "flux2_klein": Workflow(WORKFLOW_DIR / "flux2_klein_9b_workflow_api.json", **TITLES),
-    "ming": Workflow(WORKFLOW_DIR / "ming_image_edit_workflow_api.json", **TITLES),
+    "qwen_image": Workflow(WORKFLOW_DIR / "qwen_image_edit_2511_workflow_api.json", **TITLES),
 }
+# WARNING: QWEN IMAGE needs Comfy-GGUF node. If you have a different workflow, please replace the json file.
 DEFAULT_WORKFLOW = "flux2_klein"
 
 app = FastAPI()
